@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using howTo.Models;
+using Npgsql;
 
 namespace howTo
 {
@@ -15,9 +16,14 @@ namespace howTo
         public Startup(IConfiguration configuration) => Configuration = configuration;
         public void ConfigureServices(IServiceCollection services)
         {
-            //Add controllers
+            var builder = new NpgsqlConnectionStringBuilder
+            {
+                ConnectionString = Configuration.GetConnectionString("PostgreSqlConnection"),
+                Username = Configuration["UserID"],
+                Password = Configuration["Password"]
+            };
             services.AddDbContext<CommandContext>(opt => opt.UseNpgsql
-                (Configuration.GetConnectionString("PostgreSqlConnection")));
+                (builder.ConnectionString));
             services.AddControllers();
         }
 

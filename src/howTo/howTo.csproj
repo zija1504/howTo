@@ -5,6 +5,8 @@
     <LangVersion>Preview</LangVersion>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <UserSecretsId>2dde1e44-57f1-4b55-8581-1c14ea1516fc</UserSecretsId>
+    
   </PropertyGroup>
 
   <ItemGroup>
