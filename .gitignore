@@ -390,3 +390,4 @@ MigrationBackup/
 
 src/howTo/appsettings.json
 .vscode/
+src/howTo/appsettings.Development.json
