@@ -17,7 +17,7 @@ steps:
 - task: UseDotNet@2
   displayName: ".NET Core 3.1.x"
   inputs:
-    version: '3.1.x'
+    version: '5.0.100-preview.7.20366.6' 
     packageType: sdk
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
