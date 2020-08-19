@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using howTo.Models;
+using Microsoft.AspNetCore.Authorization;
+
+
 
 namespace howTo.Controllers
 {
@@ -19,6 +22,8 @@ namespace howTo.Controllers
 
         [HttpGet]
         public ActionResult<IEnumerable<Commands>> GetCommandItems() => _context.CommandItems;
+
+        [Authorize]
         [HttpGet("{id}")]
         public ActionResult<Commands> GetCommandItem(int id)
         {
